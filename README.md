@@ -86,7 +86,7 @@ Cree un objeto Pin llamado led que  es una salida, que hace referencia al ESP32/
 led = Pin(2, Pin.OUT)
 ```
 
-### [main.py](https://github.com/ericksc/esp_wifi_server/blob/main/main.py)
+## [main.py](https://github.com/ericksc/esp_wifi_server/blob/main/main.py)
 
 
 El script comienza creando una función llamada web_page(). Esta función devuelve una variable llamada html que contiene el texto HTML para construir la página web.
@@ -183,20 +183,31 @@ conn.close()
 ```
 
 ## Prueba del servidor web
-Cargue los archivos main.py y boot.py en el ESP32/ESP8266. La  carpeta del dispositivo debe contener dos archivos: boot.py y main.py.
+Cargue los archivos [main.py](https://github.com/ericksc/esp_wifi_server/blob/main/main.py) y [boot.py](https://github.com/ericksc/esp_wifi_server/blob/main/boot.py) en el ESP32/ESP8266. La  carpeta del dispositivo debe contener dos archivos: boot.py y main.py.
 Después de cargar los archivos, pulse el botón integrado ESP EN/RST.
  
  
 Después de unos segundos, debería establecer una conexión con su enrutador e imprimir la dirección IP en el Shell.
+
+![image](https://user-images.githubusercontent.com/20059518/221370565-1a7b3dfd-fa56-4c47-83b5-8937b8be67f6.png)
+
  
 Abra su navegador y escriba su dirección IP ESP que acaba de encontrar. Debería ver la página del servidor web como se muestra a continuación.
+ 
+ ![image](https://user-images.githubusercontent.com/20059518/221370628-0881842f-693c-479d-a528-b7e4db7f942a.png)
+
  
 Cuando presiona el botón ON, realiza una solicitud en la dirección IP ESP seguida de /?led=on. El LED integrado ESP32/ESP8266 se enciende y el estado de GPIO se actualiza en la página.
 Nota: algunos LED integrados ESP8266 encienden el LED con un comando OFF y apagan el LED con el comando ON.
  
+ ![image](https://user-images.githubusercontent.com/20059518/221370654-4b3f0306-fb77-451b-ae7b-aed1687c41dc.png)
+
+ 
  
 Cuando presiona el botón OFF, realiza una solicitud en la dirección IP ESP seguida de /?led=off. El LED se apaga y se actualiza el estado de GPIO.
  
+ ![image](https://user-images.githubusercontent.com/20059518/221370676-0a4e5095-4257-4f91-8b3b-3e36d11f2a0c.png)
+
  
 Nota: Se esta controlando el LED integrado que corresponde a GPIO 2. Puede controlar cualquier otro GPIO con cualquier otra salida (un relé, por ejemplo) utilizando el mismo método. Además, puede modificar el código para controlar varios GPIO o cambiar el texto HTML para crear una página web diferente.
 Terminando
